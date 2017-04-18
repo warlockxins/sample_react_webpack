@@ -1,10 +1,19 @@
 var debug = false;//process.env.NODE_ENV !== "production";
+var fs = require('fs');
 var webpack = require('webpack');
+var _ = require('lodash');
 
+let entries = fs.readdirSync('./src/')
+.filter(function(file) {
+  return file.match(/.*\.js$/);
+});
+entries = _.map(entries, (file) => {
+  return './src/' + file;
+});
 module.exports = {
   context: __dirname,
   devtool: "inline-sourcemap",
-  entry: "./src/app.js",
+  entry: entries,
   module: {
     loaders: [
       {
@@ -25,7 +34,7 @@ module.exports = {
                   loader: "sass-loader", // compiles Sass to CSS
                   options: {
                     includePaths: ["/scss"],
-                    outFile:"/css"
+                    outFile:"./css/main.css"
                   }
               }]
         }
@@ -36,7 +45,7 @@ module.exports = {
     filename: "app.bundle.js"
   },
   plugins: debug ? [] : [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({ sourcemap: false, compress: true }),
+    // new webpack.optimize.DedupePlugin(),
+    // new webpack.optimize.UglifyJsPlugin({ sourcemap: false, compress: true }),
   ],
 };
