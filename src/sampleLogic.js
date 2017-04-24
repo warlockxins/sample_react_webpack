@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-var InteractionTest = React.createClass({
+var createReactClass = require('create-react-class');
+
+var InteractionTest = createReactClass({
   render() {
     return (
       <div onClick = { this.props.updateCounter }>
-        The visual representation is irrelevant
+        The visual representation is irrelevant ?
       </div>
     );
   }

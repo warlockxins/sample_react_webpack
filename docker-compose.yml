@@ -1,0 +1,27 @@
+version: '2'
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: diatom:node_tests
+    container_name: diatom-node-container
+    ports:
+      - "8080:8080"
+    volumes:
+      - wwwroot:/usr/src/app/wwwroot
+  webpack:
+    build:
+      context: .
+      dockerfile: docker.webpack
+    image: my-webpack
+    container_name: diatom-webpack-container
+    ports:
+      - "35729:35729"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+      - wwwroot:/usr/src/app/wwwroot
+volumes:
+  wwwroot:
+    driver: local

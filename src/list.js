@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import _ from "lodash";
+var createReactClass = require('create-react-class');
 
-var ListItems = React.createClass({
+var ListItems = createReactClass({
     shouldComponentUpdate(nextProps, nextState) {
         let d = _.difference(nextProps.listItems, this.props.listItems)
         return d.length;
@@ -12,7 +13,7 @@ var ListItems = React.createClass({
     },
     render() {
         let self = this;
-        let time = " remember when I was updated " + new Date();
+        let time = " remember when+ I was updated: " + new Date();
         return (
             <ul>
                 {

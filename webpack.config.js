@@ -41,7 +41,7 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname + "/bin",
+    path: __dirname + "/wwwroot",
     filename: "app.bundle.js"
   },
   plugins: debug ? [] : [

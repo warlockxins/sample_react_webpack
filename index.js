@@ -8,7 +8,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('*', function(req, res) {
-  if (req.originalUrl.indexOf("/bin/") > -1) {
+  if (req.originalUrl.indexOf("/wwwroot/") > -1) {
     res.sendFile(path.join(__dirname + req.originalUrl));
   }
 });

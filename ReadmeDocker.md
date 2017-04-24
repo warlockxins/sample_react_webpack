@@ -41,7 +41,7 @@ docker logs <container id>
 ```
 
 In this particular case, you will be able to access Node.js web page at:
-*http://localhost:49160/* Notice the mapped port 49160/
+*http://localhost:49160/* Notice the previosly mapped port 49160/
 
 # Run error
 
@@ -64,3 +64,4 @@ Then `docker run...` again.
 *This setup is built using online resources:*
 1. https://docs.docker.com/edge/engine/reference/commandline/docker/
 2. https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
+3. http://dapperdeveloper.com/2016/05/18/developing-with-docker-and-webpack/
