@@ -14,3 +14,5 @@ app.get('*', function(req, res) {
 });
 
 app.listen(8080);
+
+console.log("your page is on localhost:8080/");
