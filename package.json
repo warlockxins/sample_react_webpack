@@ -28,7 +28,8 @@
     "babel-preset-react": "^6.23.0",
     "node-sass": "^4.5.2",
     "sass-loader": "^6.0.3",
-    "webpack": "^1.14.0"
+    "webpack": "^1.14.0",
+    "mongodb": "^2.2.26"
   },
   "dependencies": {
     "babel-core": "^6.17.0",

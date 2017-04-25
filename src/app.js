@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import InteractionTest from './sampleLogic'
 import ListItems from './list'
+import UserListItems from './listUsers'
 
 class MyComponent extends React.Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class MyComponent extends React.Component {
         <h1>test every thing { this.state.interaction } </h1>
         <ListItems listItems = { this.state.listItems } listItemPressed={ this.listItemPressed.bind(this) } />
         <InteractionTest updateCounter={ this.clickButton.bind(this) } />
+        <UserListItems/>
       </div>
     );
   }
