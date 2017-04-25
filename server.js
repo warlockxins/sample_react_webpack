@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var MongoClient = require('mongodb').MongoClient;
+var ObjectID = require("mongodb").ObjectID;
 
 var url = "mongodb://db:27017/docerDemo";
 MongoClient.connect(url, function(err, database) {
@@ -46,6 +47,18 @@ app.get('/getSpoofData', function(req, res) {
   });
 });
 
+app.get('/removeSpoofData/:id', function(req, res) {
+  var id = req.params.id; //or use req.param('id')
+  var collection = db.collection('users');
+  collection.remove({ "_id": ObjectID(id) }, function(err, result) {
+    if (err) {
+      res.send({ error: err });
+    } else {
+      res.send({ ok: true, message: "removed " + result.result.n + " item(s), id: " + id});
+    }
+  });
+  
+});
 
 app.listen(8080);
 

@@ -31,6 +31,14 @@ var UserListItems = createReactClass({
             self.loadData();
         });
     },
+    removeData(id) {
+        let self = this;
+        let url = "/removeSpoofData/" + id;
+        fetch(url)
+        .then((result) => {
+            self.loadData();
+        });
+    },
     render() {
         return (
             <div>
@@ -41,7 +49,7 @@ var UserListItems = createReactClass({
                         this.state.items.map((item, index) => {
                             return (
                                 <li key={ index }>
-                                    { item.name } { item.mail } { item.createdAt }
+                                   <span onClick={ this.removeData.bind(this, item._id) }>(X)</span> { item.name } { item.mail } { item.createdAt }
                                 </li>
                             )
                         })
