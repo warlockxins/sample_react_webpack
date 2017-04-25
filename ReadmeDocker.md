@@ -7,17 +7,16 @@ cd PATH_TO_APP/
 docker build -t diatom:node_tests .
 ```
 
-  After this, to see existing docker images on local machine:
-
+After this, to see existing docker images on local machine:
 ```
 docker images
 ```
 
-You should see respective image name:
+You should see respective image name.
 
- REPOSITORY | TAG | IMAGE ID |  ...
---- | --- | ---
-*diatom* | node_tests | b35fc7oo... | ...
+REPOSITORY | TAG | IMAGE ID | etc
+--- | --- | --- | ---
+*diatom* | node_tests | b35fc7oo... | ... |
 
 # Running the app
 
@@ -26,14 +25,11 @@ Running your image with -d runs the container in detached mode, leaving the cont
 ```
 docker run -p 49160:8080 -d diatom:node_tests
 ```
+When running, to see active Docker images, run ``docker ps`` in terminal. You will see: 
 
-When running, to see active Docker images, run ``docker ps`` in terminal.
-
-You will see:
-
-CONTAINER ID | IMAGE | COMMAND |  ...
---- | --- | ---
-*e0137fa4...* | diatom:node_tests | node index | ...
+CONTAINER ID | IMAGE | COMMAND |  etc... 
+--- |  --- |  --- | ---
+| *e0137fa4...* | diatom:node_tests | node index | ... |
 
 If you have logs in your server `*.js` files, you can view them by:
 ```
@@ -55,8 +51,11 @@ docker: Error response from daemon: driver failed programming external connectiv
 You will need to kill running images:
 ```
 docker ps
-# copy presented container id
+//copy presented container id
 docker kill <container id>
+
+// kill all docker containers
+docker kill $(docker ps -q)
 ```
 
 Then `docker run...` again.
