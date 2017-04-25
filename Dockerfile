@@ -7,12 +7,14 @@ WORKDIR /usr/src/app
 # Install app dependencies
 COPY package.json /usr/src/app/
 RUN npm install
+RUN npm install -g nodemon
 
 # Bundle app source
-COPY . /usr/src/app
+#COPY . /usr/src/app
+ADD . /usr/src/app
 
 # Expose the port used by Node.js
 EXPOSE 8080
 
 # start the app
-CMD [ "node", "index" ]
+CMD ["nodemon", "--debug", "/usr/src/app"]

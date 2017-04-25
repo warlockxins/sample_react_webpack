@@ -13,7 +13,7 @@ var ListItems = createReactClass({
     },
     render() {
         let self = this;
-        let time = " remember when+ I was updated: " + new Date();
+        let time = " remember when+ I was updated? " + new Date();
         return (
             <ul>
                 {

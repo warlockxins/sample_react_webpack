@@ -8,7 +8,7 @@
       "es2015"
     ]
   },
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "dev": "webpack-dev-server --content-base src --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1"

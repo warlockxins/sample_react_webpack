@@ -20,4 +20,4 @@ docker ps
 // copy container id of interest
 docker exec -it <container id> bash
 ```
-this will enter your container applications `WORKDIR`.
+this will enter your container applications `WORKDIR` & you will be able to execute comands inside container.

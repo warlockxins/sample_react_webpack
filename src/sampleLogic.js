@@ -7,7 +7,7 @@ var InteractionTest = createReactClass({
   render() {
     return (
       <div onClick = { this.props.updateCounter }>
-        The visual representation is irrelevant ?
+        The visual representation is irrelevant
       </div>
     );
   }
