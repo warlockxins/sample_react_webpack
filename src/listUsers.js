@@ -31,25 +31,31 @@ var UserListItems = createReactClass({
             self.loadData();
         });
     },
-    removeData(id) {
+    removeData(id, index) {
         let self = this;
         let url = "/removeSpoofData/" + id;
         fetch(url)
         .then((result) => {
-            self.loadData();
+            this.removeElementFromList(index);
         });
+    },
+    removeElementFromList(index) {
+        let {items} = this.state;
+        items.splice(index, 1);
+
+        this.setState(items);
     },
     render() {
         return (
             <div>
                 <hr/>
                 <span onClick= { this.addNewData }> Add new record </span>
-                <ul>
+                <ul className="user-list">
                     {
                         this.state.items.map((item, index) => {
                             return (
                                 <li key={ index }>
-                                   <span onClick={ this.removeData.bind(this, item._id) }>(X)</span> { item.name } { item.mail } { item.createdAt }
+                                   <span onClick={ this.removeData.bind(this, item._id, index) }>(X)</span> { item.name } { item.mail } { item.createdAt }
                                 </li>
                             )
                         })

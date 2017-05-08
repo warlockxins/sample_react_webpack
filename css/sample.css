@@ -1,0 +1,4 @@
+.user-list {
+    transition: all 2s;
+    -webkit-transition: all 2s;
+}

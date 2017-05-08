@@ -22,6 +22,9 @@ app.get('/', function(req, res) {
 app.get('/wwwroot/*', function(req, res) {
   res.sendFile(path.join(__dirname + req.originalUrl));
 });
+app.get('/css/*', function(req, res) {
+  res.sendFile(path.join(__dirname + req.originalUrl));
+});
 
 app.get('/addSpoofData', function(req, res) {
   var name = 'usr' + Math.floor(Math.random()*1000);
