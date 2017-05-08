@@ -104,3 +104,4 @@ docker rmi $(docker images -q)
 2. https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
 3. http://dapperdeveloper.com/2016/05/18/developing-with-docker-and-webpack/
 4. https://prakhar.me/docker-curriculum/
+5. https://techoverflow.net/2013/10/22/docker-remove-all-images-and-containers/
