@@ -43,7 +43,7 @@ app.get('/addSpoofData', function(req, res) {
 });
 
 app.get('/getSpoofData', function(req, res) {
-  var collection = db.collection('users')
+  db.collection('users')
   .find().toArray(function(err, docs) {
     console.log('found data:', docs)
     res.send(docs);
@@ -60,9 +60,9 @@ app.get('/removeSpoofData/:id', function(req, res) {
       res.send({ ok: true, message: "removed " + result.result.n + " item(s), id: " + id});
     }
   });
-  
+
 });
 
-app.listen(8080);
+app.listen(8085);
 
-console.log("Your page is here: localhost:8080/");
+console.log("Your page is here: localhost:8085/");

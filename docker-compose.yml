@@ -11,7 +11,7 @@ services:
     image: diatom:node_tests
     container_name: diatom-node-container
     ports:
-      - "8080:8080"
+      - "8085:8085"
     volumes:
       - wwwroot:/usr/src/app/wwwroot
     links:
