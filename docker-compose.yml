@@ -16,18 +16,6 @@ services:
       - wwwroot:/usr/src/app/wwwroot
     links:
       - db
-  webpack:
-    build:
-      context: .
-      dockerfile: docker.webpack
-    image: my-webpack
-    container_name: diatom-webpack-container
-    ports:
-      - "35729:35729"
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
-      - wwwroot:/usr/src/app/wwwroot
 volumes:
   wwwroot:
     driver: local
