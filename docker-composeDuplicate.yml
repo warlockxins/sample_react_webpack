@@ -4,9 +4,12 @@ services:
     image: mongo
     ports:
       - "27017:27017"
-  node_part:
-    image: warlockxins/docker_diatom_test
-    container_name: diatom-node-container${HOSTNAME}
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: diatom:node_tests
+    container_name: diatom-node-container
     ports:
       - "8085:8085"
     volumes:

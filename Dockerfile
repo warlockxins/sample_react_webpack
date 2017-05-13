@@ -18,7 +18,7 @@ ADD . /usr/src/app
 #RUN webpack --watch --watch-polling
 RUN webpack
 # Expose the port used by Node.js
-EXPOSE 8080
+EXPOSE 8085
 
 # start the app
 CMD ["nodemon", "--debug", "/usr/src/app"]
