@@ -1,0 +1,31 @@
+version: '3'
+services:
+  main:
+    image: warlockxins/docker_diatom_test
+    environment:
+      - DB=db
+    networks:
+      - proxy
+      - default
+    volumes:
+      - wwwroot:/usr/src/app/wwwroot
+    deploy:
+      replicas: 3
+      labels:
+        - com.df.notify=true
+        - com.df.distribute=true
+        - com.df.port=8085
+
+  db:
+    image: mongo
+    networks:
+      - default
+
+networks:
+  default:
+    external: false
+  proxy:
+    external: true
+volumes:
+  wwwroot:
+    driver: local
