@@ -14,10 +14,13 @@ services:
       labels:
         - com.df.notify=true
         - com.df.distribute=true
+        - com.df.servicePath=/
         - com.df.port=8085
 
   db:
     image: mongo
+    ports:
+      - "27017:27017"
     networks:
       - default
 
