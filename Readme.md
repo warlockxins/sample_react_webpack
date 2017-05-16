@@ -6,6 +6,7 @@ Feel free to inspect:
 1. ReadmeDocker.md
 2. ReadmeDockerCompose.md
 3. ReadmeSwarm.md
+4. ReadmeDockerStack.md
 
 
 *This Guide is built using online resources:*
