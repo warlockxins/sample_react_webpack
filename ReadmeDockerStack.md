@@ -102,3 +102,12 @@ d7liw7dr5xj3        diatom_demo_main.1   warlockxins/docker_diatom_test:latest  
 iw8wgbzlyjql        diatom_demo_main.2   warlockxins/docker_diatom_test:latest   node-3              Running             Preparing 18 seconds ago                       
 0oumjys5xpgl        diatom_demo_main.3   warlockxins/docker_diatom_test:latest   node-1              Running             Preparing 18 seconds ago                       
 ```
+
+# Cleanup
+After done using nodes, just remove them
+```
+// exit node-1
+exit
+
+docker-machine rm -f node-1 node-2 node-3
+```
