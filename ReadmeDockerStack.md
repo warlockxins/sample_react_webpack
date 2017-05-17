@@ -111,3 +111,6 @@ exit
 
 docker-machine rm -f node-1 node-2 node-3
 ```
+
+#### Documentation
+Reference https://docs.docker.com/engine/reference/commandline/stack_services/#extended-description for better understanding
