@@ -7,7 +7,7 @@ var InteractionTest = createReactClass({
   render() {
     return (
       <div onClick = { this.props.updateCounter }>
-        The visual representation is irrelevant
+        Press to increment number in the Header?
       </div>
     );
   }

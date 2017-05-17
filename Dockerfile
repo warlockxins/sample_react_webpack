@@ -8,15 +8,11 @@ WORKDIR /usr/src/app
 COPY package.json /usr/src/app/
 RUN npm install
 RUN npm install -g nodemon
-RUN npm install webpack -g
-RUN npm install --save extract-text-webpack-plugin
 # Bundle app source
 #COPY . /usr/src/app
 ADD . /usr/src/app
 
-
-#RUN webpack --watch --watch-polling
-RUN webpack
+RUN node ./node_modules/webpack/bin/webpack.js
 # Expose the port used by Node.js
 EXPOSE 8085
 
