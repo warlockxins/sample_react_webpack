@@ -7,7 +7,7 @@ services:
     networks:
       - default
   main:
-    image: warlockxins/docker_diatom_test
+    image: warlockxins/docker_diatom_test:latest
     environment:
       - DB=db
     networks:

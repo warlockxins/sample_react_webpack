@@ -98,3 +98,14 @@ This command deletes all containers that have a status of exited. In case you're
 # Delete all images
 docker rmi $(docker images -q)
 ```
+
+# Push to Docker
+When your image is built you might want to publish it to Docker. You might need it n order to:
+1. reuse it in different project as a base image
+2. to publish as docker container
+
+In scope of this sample we build `warlockxins/docker_diatom_test`, so:
+```
+docker build -t warlockxins/docker_diatom_test .
+docker push warlockxins/docker_diatom_test
+```

@@ -10,6 +10,8 @@ chmod +x swarm-cluster.sh
  ./swarm-cluster.sh
 
  docker network create --driver overlay proxy
+
+ docker-machine ssh node-1
 ```
 
 then use https://github.com/vfarcic/docker-flow-proxy to configure proxy and swarm listener files - "yml", like this
@@ -87,7 +89,7 @@ curl -o docker-compose-app-stack.yml \
 then deploy:
 ```
 docker stack deploy \
->     -c docker-compose-app-stack.yml diatom_demo
+     -c docker-compose-app-stack.yml diatom_demo
 ```
 
 then you can observe that the app was deployed to several nodes ;)
