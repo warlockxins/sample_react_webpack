@@ -7,7 +7,7 @@ var InteractionTest = createReactClass({
   render() {
     return (
       <div onClick = { this.props.updateCounter }>
-        Press to increment number in the Header?
+        Press to increment number in the Header
       </div>
     );
   }

@@ -7,7 +7,6 @@ WORKDIR /usr/src/app
 # Install app dependencies
 COPY package.json /usr/src/app/
 RUN npm install
-RUN npm install -g nodemon
 # Bundle app source
 #COPY . /usr/src/app
 ADD . /usr/src/app
@@ -17,4 +16,4 @@ RUN node ./node_modules/webpack/bin/webpack.js
 EXPOSE 8085
 
 # start the app
-CMD ["nodemon", "--debug", "/usr/src/app"]
+CMD ["node", "--debug", "/usr/src/app"]

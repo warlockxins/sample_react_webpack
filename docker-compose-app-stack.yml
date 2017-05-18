@@ -13,8 +13,6 @@ services:
     networks:
       - proxy
       - default
-    volumes:
-      - wwwroot:/usr/src/app/wwwroot
     deploy:
       replicas: 3
       update_config:
